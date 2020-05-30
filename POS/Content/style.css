@@ -1,0 +1,125 @@
+.header {
+  background-color: rgb(221, 54, 54);
+  padding: 5px;
+}
+.header .header-inside {
+  color: whitesmoke;
+  padding: 5px;
+  margin: 0 30px;
+}
+.header .close {
+  position: absolute;
+  right: 25px;
+  font-size: 24px;
+  top: 9px;
+  padding: 4px;
+}
+.header button span {
+  background: white;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+.main-section {
+  margin: 0 40px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.main-section .mainsec-title {
+  position: absolute;
+  z-index: 9;
+  background: white;
+  padding: 5px;
+  top: -15px;
+  left: 30px;
+  font-size: 14px;
+}
+.card {
+  min-height: 222px;
+  margin-bottom: 20px;
+}
+.card table {
+  width: 100%;
+}
+.form-control {
+  font-size: 12px !important;
+}
+table,
+th,
+td {
+  background: #ffffff;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+table {
+  border-spacing: 10px;
+}
+
+.middle-part h6 {
+  text-align: center;
+  font-size: 12px;
+}
+.middle-part .inputfields .form-control {
+  height: 30px;
+  font-size: 12px;
+}
+
+.middle-part .inputfields button {
+  margin: 13px 5px;
+  padding: 6px;
+  background-color: rgb(221, 54, 54);
+  border: none;
+  color: whitesmoke;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.middle-part .inputfields button {
+  margin: 5px;
+}
+
+.middle-part .total span {
+  font-size: 12px;
+}
+.middle-part .total .form-control {
+  width: 50%;
+  display: inline-block;
+  height: 30px;
+  font-size: 12px;
+}
+.total-amount .tablemain {
+  padding: 2px;
+}
+
+.total-amount .tablemain .table-info th {
+  background-color: rgb(221, 54, 54);
+  color: white;
+}
+.total-amount .card {
+  min-height: 270px;
+}
+
+.button3 {
+  width: 19%;
+  display: inline-block;
+  background-color: rgb(221, 54, 54);
+  border-radius: 5px;
+  height: 29px;
+  padding: 3px;
+  color: white;
+  text-align: center;
+}
+.button3 p {
+  display: inline-block;
+}
+
+.footer-part .card {
+  min-height: 91px;
+  margin-bottom: 20px;
+}
+.footer-part textarea {
+  overflow-y: scroll;
+}
+

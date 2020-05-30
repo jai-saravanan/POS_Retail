@@ -1,0 +1,14 @@
+D:\POS\Repository\bin\Debug\Repository.dll.config
+D:\POS\Repository\bin\Debug\Repository.dll
+D:\POS\Repository\bin\Debug\Repository.pdb
+D:\POS\Repository\bin\Debug\EntityFramework.dll
+D:\POS\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\POS\Repository\bin\Debug\Persistance.dll
+D:\POS\Repository\bin\Debug\Persistance.pdb
+D:\POS\Repository\bin\Debug\Persistance.dll.config
+D:\POS\Repository\bin\Debug\EntityFramework.xml
+D:\POS\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\POS\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\POS\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\POS\Repository\obj\Debug\Repository.dll
+D:\POS\Repository\obj\Debug\Repository.pdb

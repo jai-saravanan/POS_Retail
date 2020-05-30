@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BE50966-7F97-4659-8AF7-9120170D5D74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Persistance</RootNamespace>
+    <AssemblyName>Persistance</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\POS\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\POS\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activation.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountLedger.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountRegistration.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankBranch.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardProcessing.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chart.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCustomer.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCustomerLedger.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCustomerPayment.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMaster.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbFirstModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbFirstModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbFirstModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbFirstModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbFirstModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailSetting.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseType.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FundDeposit.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FundTransfer.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceInfo.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Payment.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Product.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Journal.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerBook.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Party.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Withdraw.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosPrinterSetting.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_ClosingCash.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_HoldBill.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_HoldBillItems.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_OpeningCash.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductLocation.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_OpeningStock.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrder.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrder_Join.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturn.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturn_Join.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_Join.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Racking.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sale.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesMan.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Salesman_Commission.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReturn.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReturn_Join.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Product.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSSetting.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjustment_Store.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjustment_Warehouse.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransfer.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransfer_Join.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransfer_Join_W2W.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransfer_W2W.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierLedgerBook.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxMaster.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxType.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Temp_Stock.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Temp_Stock_Company.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMaster.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voucher.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voucher_OtherDetails.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wallet.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseType.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DbFirstModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbFirstModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="DbFirstModel.edmx.diagram">
+      <DependentUpon>DbFirstModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DbFirstModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbFirstModel.Context.cs</LastGenOutput>
+      <DependentUpon>DbFirstModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DbFirstModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbFirstModel.edmx</DependentUpon>
+      <LastGenOutput>DbFirstModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Script\DBscript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

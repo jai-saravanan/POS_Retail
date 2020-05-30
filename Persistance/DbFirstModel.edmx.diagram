@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71083e994e324ba98b3c5afd91176a7a" Name="Diagram1">
+        <EntityTypeShape EntityType="DbFirstModel.Activation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Bank" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.BankAccountLedger" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.BankAccountRegistration" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.BankBranch" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.CardProcessing" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Category" Width="1.5" PointX="3" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Company" Width="1.5" PointX="6" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.CreditCustomer" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.CreditCustomerLedger" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.CreditCustomerPayment" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Currency" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.CustomerMaster" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.EmailSetting" Width="1.5" PointX="5.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Expense" Width="1.5" PointX="12" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.ExpenseType" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.FundDeposit" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.FundTransfer" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Invoice_Payment" Width="1.5" PointX="7.5" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Invoice_Product" Width="1.5" PointX="7.5" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.InvoiceInfo" Width="1.5" PointX="5.25" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Journal" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.LedgerBook" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Log" Width="1.5" PointX="11.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Party" Width="1.5" PointX="9" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Payment" Width="1.5" PointX="16" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Payment_Withdraw" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.POS_ClosingCash" Width="1.5" PointX="5.25" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.POS_HoldBill" Width="1.5" PointX="8.25" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.POS_HoldBillItems" Width="1.5" PointX="10.5" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.POS_OpeningCash" Width="1.5" PointX="3" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PosPrinterSetting" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Product" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Product_OpeningStock" Width="1.5" PointX="7.5" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.ProductLocation" Width="1.5" PointX="7.5" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Purchase" Width="1.5" PointX="8.25" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Purchase_Join" Width="1.5" PointX="10.5" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PurchaseOrder" Width="1.5" PointX="8.25" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PurchaseOrder_Join" Width="1.5" PointX="10.5" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PurchaseReturn" Width="1.5" PointX="11.25" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PurchaseReturn_Join" Width="1.5" PointX="13.5" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Racking" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Registration" Width="1.5" PointX="9" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Sale" Width="1.5" PointX="11.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Sales_Product" Width="1.5" PointX="13.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.SalesMan" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Salesman_Commission" Width="1.5" PointX="7.5" PointY="73.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.SalesReturn" Width="1.5" PointX="11.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.SalesReturn_Join" Width="1.5" PointX="13.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Setting" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.SMSSetting" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockAdjustment_Store" Width="1.5" PointX="7.5" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockAdjustment_Warehouse" Width="1.5" PointX="7.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockTransfer" Width="1.5" PointX="8.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockTransfer_Join" Width="1.5" PointX="10.5" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockTransfer_Join_W2W" Width="1.5" PointX="16.5" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.StockTransfer_W2W" Width="1.5" PointX="14.25" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Supplier" Width="1.5" PointX="13.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.SupplierLedgerBook" Width="1.5" PointX="15.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.TaxMaster" Width="1.5" PointX="3" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.TaxType" Width="1.5" PointX="0.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Temp_Stock" Width="1.5" PointX="16.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Temp_Stock_Company" Width="1.5" PointX="7.5" PointY="88.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.UnitMaster" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Voucher" Width="1.5" PointX="12" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Voucher_OtherDetails" Width="1.5" PointX="14.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Wallet" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Warehouse" Width="1.5" PointX="5.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.WarehouseType" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.Chart" Width="1.5" PointX="17.75" PointY="16.75" IsExpanded="true" />
+        <AssociationConnector Association="DbFirstModel.FK_BankBranch_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_BankAccountLedger_BankAccountRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_BankAccountRegistration_BankBranch" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_FundDeposit_BankAccountRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Payment_Withdraw_BankAccountRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_CardProcessing_InvoiceInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_CreditCustomerLedger_CreditCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_CreditCustomerPayment_CreditCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Expense_ExpenseType" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Voucher_OtherDetails_Expense" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Invoice_Payment_InvoiceInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Invoice_Product_InvoiceInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Invoice_Product_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_InvoiceInfo_POS_OpeningCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Salesman_Commission_InvoiceInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_SalesReturn_InvoiceInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Logs_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Sales_Party" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Payment_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_POS_ClosingCash_POS_OpeningCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_POS_HoldBill_POS_OpeningCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_POS_HoldBillItems_POS_HoldBill" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_POS_HoldBillItems_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_POS_OpeningCash_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Product_OpeningStock_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Product_TaxMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_ProductLocation_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Purchase_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_PurchaseOrder_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_PurchaseReturn_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Sales_Product_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_SalesReturn_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockAdjustment_Store_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockAdjustment_Warehouse_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Join_W2W_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Temp_Stock_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Temp_Stock_Store_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_ProductLocation_Racking" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Purchase_Join_Purchase" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_PurchaseReturn_Purchase" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_PurchaseOrder_Join_PurchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_PurchaseReturn_Join_PurchaseReturn" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Sales_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Sales_Product_Sales" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Sales_Product_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_SalesReturn_Join_SalesReturn" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockAdjustment_Warehouse_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Join_StockTransfer" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_Join_W2W_StockTransfer_W2W" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_StockTransfer_W2W_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_TaxMaster_TaxType" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Temp_Stock_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Voucher_OtherDetails_Voucher" ManuallyRouted="false" />
+        <AssociationConnector Association="DbFirstModel.FK_Warehouse_WarehouseType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

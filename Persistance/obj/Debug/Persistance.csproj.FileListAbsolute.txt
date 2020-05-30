@@ -1,0 +1,11 @@
+D:\POS\Persistance\bin\Debug\Persistance.dll.config
+D:\POS\Persistance\bin\Debug\Persistance.dll
+D:\POS\Persistance\bin\Debug\Persistance.pdb
+D:\POS\Persistance\bin\Debug\EntityFramework.dll
+D:\POS\Persistance\bin\Debug\EntityFramework.SqlServer.dll
+D:\POS\Persistance\bin\Debug\EntityFramework.xml
+D:\POS\Persistance\bin\Debug\EntityFramework.SqlServer.xml
+D:\POS\Persistance\obj\Debug\Persistance.csprojAssemblyReference.cache
+D:\POS\Persistance\obj\Debug\Persistance.csproj.CopyComplete
+D:\POS\Persistance\obj\Debug\Persistance.dll
+D:\POS\Persistance\obj\Debug\Persistance.pdb

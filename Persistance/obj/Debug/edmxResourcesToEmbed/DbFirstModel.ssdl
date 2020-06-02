@@ -67,32 +67,6 @@
     </Key>
     <Property Name="CategoryName" Type="nchar" MaxLength="200" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'POS.dbo.Chart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Chart">
-    <Key>
-      <PropertyRef Name="M" />
-      <PropertyRef Name="MName" />
-      <PropertyRef Name="T" />
-      <PropertyRef Name="TName" />
-      <PropertyRef Name="AccountNo" />
-      <PropertyRef Name="AccountName" />
-    </Key>
-    <Property Name="M" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="MName" Type="nchar" MaxLength="100" Nullable="false" />
-    <Property Name="T" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="TName" Type="nchar" MaxLength="100" Nullable="false" />
-    <Property Name="AccountNo" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="AccountName" Type="nchar" MaxLength="100" Nullable="false" />
-    <Property Name="OpenDate" Type="date" />
-    <Property Name="OpeningBalance" Type="float" />
-    <Property Name="Address" Type="nchar" MaxLength="200" />
-    <Property Name="Phone" Type="nchar" MaxLength="20" />
-    <Property Name="Mobile" Type="nchar" MaxLength="20" />
-    <Property Name="FaxNo" Type="nchar" MaxLength="20" />
-    <Property Name="GstNo" Type="nchar" MaxLength="20" />
-    <Property Name="Ntn" Type="nchar" MaxLength="20" />
-  </EntityType>
   <EntityType Name="Company">
     <Key>
       <PropertyRef Name="Id" />
@@ -1678,6 +1652,11 @@ warning 6002: The table/view 'POS.dbo.Chart' does not have a primary key defined
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="spGetPOList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SupplierName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
   <EntityContainer Name="DbFirstModelStoreContainer">
     <EntitySet Name="Activation" EntityType="Self.Activation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
@@ -1748,24 +1727,6 @@ warning 6002: The table/view 'POS.dbo.Chart' does not have a primary key defined
     <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WarehouseType" EntityType="Self.WarehouseType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Chart" EntityType="Self.Chart" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Chart].[M] AS [M], 
-    [Chart].[MName] AS [MName], 
-    [Chart].[T] AS [T], 
-    [Chart].[TName] AS [TName], 
-    [Chart].[AccountNo] AS [AccountNo], 
-    [Chart].[AccountName] AS [AccountName], 
-    [Chart].[OpenDate] AS [OpenDate], 
-    [Chart].[OpeningBalance] AS [OpeningBalance], 
-    [Chart].[Address] AS [Address], 
-    [Chart].[Phone] AS [Phone], 
-    [Chart].[Mobile] AS [Mobile], 
-    [Chart].[FaxNo] AS [FaxNo], 
-    [Chart].[GstNo] AS [GstNo], 
-    [Chart].[Ntn] AS [Ntn]
-    FROM [dbo].[Chart] AS [Chart]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_BankAccountLedger_BankAccountRegistration" Association="Self.FK_BankAccountLedger_BankAccountRegistration">
       <End Role="BankAccountRegistration" EntitySet="BankAccountRegistration" />
       <End Role="BankAccountLedger" EntitySet="BankAccountLedger" />

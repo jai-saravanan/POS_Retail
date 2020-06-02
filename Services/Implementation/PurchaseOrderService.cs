@@ -1,8 +1,10 @@
-﻿using Domain.ViewModel;
+﻿using Domain.Model;
+using Domain.ViewModel;
 using Persistance;
 using Repository.Interface;
 using Services.Interface;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Services.Implementation
@@ -18,6 +20,11 @@ namespace Services.Implementation
         public int GetLastPONumber()
         {
             return _purchaseOrderRepository.GetLastPONumber();
+        }
+
+        public List<PurchaseOrderDetailList> GetPOList(PurchaseOrderFilter purchaseOrderFilter)
+        {
+            return _purchaseOrderRepository.GetPOList(purchaseOrderFilter);
         }
 
         public bool SavePODetails(PurchaseOrderViewModel purchaseOrderViewModel)
@@ -45,6 +52,11 @@ namespace Services.Implementation
                                                                 }).ToList()
             };
             return _purchaseOrderRepository.SavePODetails(purchaseOrder);
+        }
+
+        public decimal GetTotalAmtForAllPO()
+        {
+            return _purchaseOrderRepository.GetTotalAmtForAllPO();
         }
     }
 }

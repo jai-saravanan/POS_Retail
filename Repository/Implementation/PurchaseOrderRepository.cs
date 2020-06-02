@@ -1,5 +1,8 @@
-﻿using Persistance;
+﻿using Domain.Model;
+using Persistance;
 using Repository.Interface;
+using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 
 namespace Repository.Implementation
@@ -30,6 +33,27 @@ namespace Repository.Implementation
                 return false;
             }
 
+        }
+
+        public List<PurchaseOrderDetailList> GetPOList(PurchaseOrderFilter purchaseOrderFilter)
+        {
+            return _dbContext.spGetPOList1(purchaseOrderFilter.SupplierName, purchaseOrderFilter.FromDate, purchaseOrderFilter.ToDate)
+                .Select(x => new PurchaseOrderDetailList()
+                {
+                    POId = x.PO_ID,
+                    Date = x.Date.ToString(),
+                    GrandTotal = x.GrandTotal,
+                    OrderDetail = x.OrderDetail,
+                    PONumber = x.PONumber,
+                    SupplierName = x.SupplierName
+                })?.Distinct()?.ToList();
+
+
+        }
+
+        public decimal GetTotalAmtForAllPO()
+        {
+            return _dbContext.PurchaseOrders.Sum(x => x.GrandTotal).Value;
         }
     }
 }

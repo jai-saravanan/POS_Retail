@@ -1,0 +1,88 @@
+﻿@model  Domain.ViewModel.POCumulativeViewModel
+@{
+    ViewBag.Title = "Purchase Order List";
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+
+    <link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.js"></script>
+
+
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+    <link href="~/Content/purchase-order-list.css" rel="stylesheet" />
+    <script src="~/Scripts/POS/purchase-order-list.js"></script>
+}
+@*<script src="https://code.jquery.com/jquery-3.5.1.js"></script>*@
+
+
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*@
+
+<div class="po-list-container">
+    <div class="row po-list-filter">
+        <div class="supplier-filter col-sm-5 border-div text-center">
+            Supplier:
+            <select id="txtSupplierId" class="input-style" style="width:250px">
+                <option value="">Select supplier</option>
+                @foreach (var item in Model.SupplierData)
+                {
+                    <option value="@item.SupplierID.Trim()">
+                        @item.Name
+                    </option>
+                }
+
+            </select>
+        </div>
+        <div class="col-sm-6 border-div text-center">
+            From:
+            <input type="text" id="txtFromDate" class="input-style">
+            To:
+            <input type="text" id="txtToDate" class="input-style">
+            <input type="button" id="btnGetData" class="btn btn-danger" value="Get Data">
+            <input type="button" id="btnReset" class="btn btn-danger" value="Reset">
+        </div>
+    </div>
+    <div class="border-div po-list-filter">
+        <table id="tblPOlist" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="hide">POId</th>
+                    <th>PO No.</th>
+                    <th>Date</th>
+                    <th>Supplier Name</th>
+                    <th>Order Detail</th>
+                    <th>Grand Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <span style="font-weight:bold">Total Amt: </span>
+                        <span style="font-weight:bold" id="spanTotalAmt">0.00</span>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+</div>
+

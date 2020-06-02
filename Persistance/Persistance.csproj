@@ -71,9 +71,6 @@
     <Compile Include="Category.cs">
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Chart.cs">
-      <DependentUpon>DbFirstModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Company.cs">
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>
@@ -220,6 +217,12 @@
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SMSSetting.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetPOList1_Result.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetPOList_Result.cs">
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>
     <Compile Include="StockAdjustment_Store.cs">

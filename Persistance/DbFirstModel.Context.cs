@@ -12,6 +12,8 @@ namespace Persistance
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class POSDbContext : DbContext
     {
@@ -94,6 +96,39 @@ namespace Persistance
         public virtual DbSet<Wallet> Wallets { get; set; }
         public virtual DbSet<Warehouse> Warehouses { get; set; }
         public virtual DbSet<WarehouseType> WarehouseTypes { get; set; }
-        public virtual DbSet<Chart> Charts { get; set; }
+    
+        public virtual ObjectResult<spGetPOList_Result> spGetPOList(string supplierName, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var supplierNameParameter = supplierName != null ?
+                new ObjectParameter("SupplierName", supplierName) :
+                new ObjectParameter("SupplierName", typeof(string));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetPOList_Result>("spGetPOList", supplierNameParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<spGetPOList1_Result> spGetPOList1(string supplierName, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var supplierNameParameter = supplierName != null ?
+                new ObjectParameter("SupplierName", supplierName) :
+                new ObjectParameter("SupplierName", typeof(string));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetPOList1_Result>("spGetPOList1", supplierNameParameter, fromDateParameter, toDateParameter);
+        }
     }
 }

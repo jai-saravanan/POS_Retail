@@ -1024,30 +1024,6 @@
     <Property Name="Type" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Warehouses" Relationship="Self.FK_Warehouse_WarehouseType" FromRole="WarehouseType" ToRole="Warehouse" />
   </EntityType>
-  <EntityType Name="Chart">
-    <Key>
-      <PropertyRef Name="M" />
-      <PropertyRef Name="MName" />
-      <PropertyRef Name="T" />
-      <PropertyRef Name="TName" />
-      <PropertyRef Name="AccountNo" />
-      <PropertyRef Name="AccountName" />
-    </Key>
-    <Property Name="M" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="MName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="T" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="TName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="AccountNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="OpenDate" Type="DateTime" Precision="0" />
-    <Property Name="OpeningBalance" Type="Double" />
-    <Property Name="Address" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="GstNo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="Ntn" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-  </EntityType>
   <Association Name="FK_BankBranch_Bank">
     <End Role="Bank" Type="Self.Bank" Multiplicity="1" />
     <End Role="BankBranch" Type="Self.BankBranch" Multiplicity="*" />
@@ -1862,7 +1838,6 @@
     <EntitySet Name="Wallets" EntityType="Self.Wallet" />
     <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
     <EntitySet Name="WarehouseTypes" EntityType="Self.WarehouseType" />
-    <EntitySet Name="Charts" EntityType="Self.Chart" />
     <AssociationSet Name="FK_BankBranch_Bank" Association="Self.FK_BankBranch_Bank">
       <End Role="Bank" EntitySet="Banks" />
       <End Role="BankBranch" EntitySet="BankBranches" />
@@ -2095,5 +2070,30 @@
       <End Role="WarehouseType" EntitySet="WarehouseTypes" />
       <End Role="Warehouse" EntitySet="Warehouses" />
     </AssociationSet>
+    <FunctionImport Name="spGetPOList" ReturnType="Collection(DbFirstModel.spGetPOList_Result)">
+      <Parameter Name="SupplierName" Mode="In" Type="String" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="spGetPOList1" ReturnType="Collection(DbFirstModel.spGetPOList1_Result)">
+      <Parameter Name="SupplierName" Mode="In" Type="String" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="spGetPOList_Result">
+    <Property Type="Int32" Name="PO_ID" Nullable="false" />
+    <Property Type="String" Name="PONumber" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="spGetPOList1_Result">
+    <Property Type="Int32" Name="PO_ID" Nullable="false" />
+    <Property Type="String" Name="PONumber" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="OrderDetail" Nullable="true" />
+    <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
 </Schema>

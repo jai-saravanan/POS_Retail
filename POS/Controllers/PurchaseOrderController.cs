@@ -1,4 +1,5 @@
-﻿using Domain.ViewModel;
+﻿using Domain.Model;
+using Domain.ViewModel;
 using Newtonsoft.Json;
 using Services.Interface;
 using System;
@@ -54,6 +55,34 @@ namespace POS.Controllers
         {
             return Json(_productService.GetPurchasePriceByProductId(pid), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult PurchaseOrderList()
+        {
+            return View(new POCumulativeViewModel()
+            {
+                SupplierData = _supplierService.GetAllSubliers(),
+                TotalAmt= _purchaseOrderService.GetTotalAmtForAllPO()
+            });
+        }
+
+        [HttpGet]
+        public JsonResult GetPOList(string supplierName, DateTime? fromDate, DateTime? toDate)
+        {
+            if (toDate.HasValue)
+                toDate = toDate.Value.AddDays(1);
+            return Json(new
+            {
+                data = _purchaseOrderService.GetPOList(new PurchaseOrderFilter()
+                {
+                    SupplierName = supplierName,
+                    FromDate = fromDate,
+                    ToDate = toDate
+                })
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+
+
 
 
     }

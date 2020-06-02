@@ -59,6 +59,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{8BE40F48-9374-4EB4-B4FA-EFE72015A7DD}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Persistance\Persistance.csproj">
       <Project>{7BE50966-7F97-4659-8AF7-9120170D5D74}</Project>
       <Name>Persistance</Name>

@@ -978,25 +978,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Charts">
-      <EntityTypeMapping TypeName="DbFirstModel.Chart">
-        <MappingFragment StoreEntitySet="Chart">
-          <ScalarProperty Name="M" ColumnName="M" />
-          <ScalarProperty Name="MName" ColumnName="MName" />
-          <ScalarProperty Name="T" ColumnName="T" />
-          <ScalarProperty Name="TName" ColumnName="TName" />
-          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
-          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
-          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
-          <ScalarProperty Name="GstNo" ColumnName="GstNo" />
-          <ScalarProperty Name="Ntn" ColumnName="Ntn" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spGetPOList1" FunctionName="DbFirstModel.Store.spGetPOList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbFirstModel.spGetPOList1_Result">
+          <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

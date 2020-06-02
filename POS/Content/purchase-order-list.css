@@ -1,0 +1,18 @@
+﻿.po-list-container {
+    margin: 20px;
+}
+
+.po-list-filter {
+    /* border: 2px solid black; */
+    margin: 10px;
+    padding: 10px;
+}
+
+.border-div {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.input-style{
+    height:25px
+}

@@ -1,6 +1,8 @@
 .header {
-  background-color: rgb(221, 54, 54);
-  padding: 5px;
+    background-color: rgb(221, 54, 54);
+    padding: 5px;
+    margin-right: 40px;
+    margin-left: 40px;
 }
 .header .header-inside {
   color: whitesmoke;

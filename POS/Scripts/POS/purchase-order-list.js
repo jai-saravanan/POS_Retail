@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $('#txtSupplierId').select2();
     $("#txtFromDate").datepicker();
     $("#txtToDate").datepicker();
     var buttonCommon = {

@@ -30,6 +30,7 @@ namespace Persistance
         public Nullable<decimal> VATAmount { get; set; }
         public Nullable<decimal> GrandTotal { get; set; }
         public string TaxType { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrder_Join> PurchaseOrder_Join { get; set; }

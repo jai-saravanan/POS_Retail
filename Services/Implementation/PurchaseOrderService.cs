@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Domain.Enum;
+using Domain.Model;
 using Domain.ViewModel;
 using Persistance;
 using Repository.Interface;
@@ -37,7 +38,7 @@ namespace Services.Implementation
                 PONumber = purchaseOrderViewModel.PONumber,
                 SubTotal = purchaseOrderViewModel.SubTotal,
                 Supplier_ID = purchaseOrderViewModel.Supplier_ID,
-                TaxType = "",
+                TaxType = purchaseOrderViewModel.TaxType,
                 Terms = purchaseOrderViewModel.Terms,
                 VATAmount = purchaseOrderViewModel.VATAmount,
                 VATPer = purchaseOrderViewModel.VATPer,
@@ -51,12 +52,44 @@ namespace Services.Implementation
                                                                     Qty = x.Qty
                                                                 }).ToList()
             };
-            return _purchaseOrderRepository.SavePODetails(purchaseOrder);
+            return _purchaseOrderRepository.SavePODetails(purchaseOrder, purchaseOrderViewModel.FormStatus);
         }
 
         public decimal GetTotalAmtForAllPO()
         {
             return _purchaseOrderRepository.GetTotalAmtForAllPO();
+        }
+
+        public PurchaseOrderViewModel GetPurchaseOrderById(int purchaseOrderId)
+        {
+            var data = _purchaseOrderRepository.GetPurchaseOrderById(purchaseOrderId);
+
+            return new PurchaseOrderViewModel()
+            {
+                Date = data.Date.Value,
+                GrandTotal = data.GrandTotal.Value,
+                POId = data.PO_ID,
+                PONumber = data.PONumber,
+                ProductDetail = data.PurchaseOrder_Join.Select(x => new PurchaseOrderDetailViewModel()
+                {
+                    Amount = x.Amount.Value,
+                    PricePerUnit = x.PricePerUnit.Value,
+                    ProductID = x.ProductID,
+                    PurchaseOrderID = x.PurchaseOrderID,
+                    Qty = x.Qty
+                }).ToList(),
+                SubTotal = data.SubTotal.Value,
+                Supplier_ID = data.Supplier_ID,
+                TaxType = data.TaxType,
+                Terms = data.Terms,
+                VATAmount = data.VATAmount.Value,
+                VATPer = data.VATPer.Value
+            };
+        }
+
+        public void DeletePurchaseOrderById(int purchaseOrderId)
+        {
+            _purchaseOrderRepository.DeletePurchaseOrderById(purchaseOrderId);
         }
     }
 }

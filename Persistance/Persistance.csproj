@@ -222,6 +222,9 @@
     <Compile Include="spGetPOList1_Result.cs">
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="spGetPOList2_Result.cs">
+      <DependentUpon>DbFirstModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="spGetPOList_Result.cs">
       <DependentUpon>DbFirstModel.tt</DependentUpon>
     </Compile>

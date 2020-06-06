@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $("#Date").datepicker();
     $("#selSupplierName").change(function () {
         $('#Supplier_ID').val(this.value);
         $('#Balance').text($('option:selected', this).attr('data-balance'));
@@ -19,7 +20,7 @@
         $('#txtBarCode').val($('option:selected', this).attr('data-barcode'));
         $('#txtUnit').val($('option:selected', this).attr('data-puchase-unit'));
 
-        $.get("GetPurchasePriceByProductId?pid=" + this.value, function (data) {
+        $.get("/PurchaseOrder/GetPurchasePriceByProductId?pid=" + this.value, function (data) {
             $("#txtRate").val(data);
         });
     });
@@ -92,6 +93,15 @@
         $('#txtQty').val('');
     }
 });
+function fnDeletePO(purchaseOrderId) {
+    debugger
+    $.ajax({
+        url: "/PurchaseOrder/DeletePurchaseOrder/" + purchaseOrderId, success: function (result) {
+            window.location.href = "/PurchaseOrder/PurchaseOrderList";
+        }
+    });
+}
+
 
 function fnRemoveRow(event) {
     event.parentNode.parentNode.remove();
@@ -99,10 +109,11 @@ function fnRemoveRow(event) {
 }
 
 function calculateTotalAmt() {
+    debugger
     var rows = $("#productList tbody tr");
     var totalAmt = 0;
     for (var i = 0; i < rows.length; i++) {
-        totalAmt = totalAmt + parseFloat(rows[i].cells[4].innerText);
+        totalAmt = totalAmt + parseFloat(rows[i].cells[5].innerText);
     }
     $('#txtSubTotal').val(totalAmt);
     $('#txtTaxValue').val(totalAmt * ($('#txtTaxPercentage').val() / 100));

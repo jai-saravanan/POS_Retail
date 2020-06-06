@@ -515,6 +515,7 @@
           <Property Name="VATAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TaxType" Type="nchar" MaxLength="20" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="PurchaseOrder_Join">
           <Key>
@@ -1658,7 +1659,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="spGetPOList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SupplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="int" Mode="In" />
           <Parameter Name="FromDate" Type="datetime" Mode="In" />
           <Parameter Name="ToDate" Type="datetime" Mode="In" />
         </Function>
@@ -2545,6 +2546,7 @@
           <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TaxType" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="PurchaseOrder_Join" Relationship="Self.FK_PurchaseOrder_Join_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrder_Join" />
+          <Property Name="IsDeleted" Type="Boolean" />
         </EntityType>
         <EntityType Name="PurchaseOrder_Join">
           <Key>
@@ -4049,6 +4051,11 @@
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="spGetPOList2" ReturnType="Collection(DbFirstModel.spGetPOList2_Result)">
+            <Parameter Name="SupplierName" Mode="In" Type="Int32" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spGetPOList_Result">
           <Property Type="Int32" Name="PO_ID" Nullable="false" />
@@ -4064,6 +4071,15 @@
           <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="OrderDetail" Nullable="true" />
           <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="spGetPOList2_Result">
+          <Property Type="Int32" Name="PO_ID" Nullable="false" />
+          <Property Type="String" Name="PONumber" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="OrderDetail" Nullable="true" />
+          <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4607,6 +4623,7 @@
           <EntitySetMapping Name="PurchaseOrders">
             <EntityTypeMapping TypeName="DbFirstModel.PurchaseOrder">
               <MappingFragment StoreEntitySet="PurchaseOrder">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
                 <ScalarProperty Name="PONumber" ColumnName="PONumber" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -5048,15 +5065,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spGetPOList1" FunctionName="DbFirstModel.Store.spGetPOList">
+          <FunctionImportMapping FunctionImportName="spGetPOList2" FunctionName="DbFirstModel.Store.spGetPOList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DbFirstModel.spGetPOList1_Result">
+              <ComplexTypeMapping TypeName="DbFirstModel.spGetPOList2_Result">
                 <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
                 <ScalarProperty Name="PONumber" ColumnName="PONumber" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
                 <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

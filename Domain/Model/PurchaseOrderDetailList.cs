@@ -15,12 +15,14 @@ namespace Domain.Model
         public string OrderDetail { get; set; }
 
         public decimal? GrandTotal { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 
 
     public class PurchaseOrderFilter
     {
-        public string SupplierName { get; set; }
+        public int? SupplierId { get; set; }
 
         public DateTime? FromDate { get; set; }
 

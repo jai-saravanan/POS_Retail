@@ -130,5 +130,22 @@ namespace Persistance
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetPOList1_Result>("spGetPOList1", supplierNameParameter, fromDateParameter, toDateParameter);
         }
+    
+        public virtual ObjectResult<spGetPOList2_Result> spGetPOList2(Nullable<int> supplierName, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var supplierNameParameter = supplierName.HasValue ?
+                new ObjectParameter("SupplierName", supplierName) :
+                new ObjectParameter("SupplierName", typeof(int));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetPOList2_Result>("spGetPOList2", supplierNameParameter, fromDateParameter, toDateParameter);
+        }
     }
 }

@@ -537,6 +537,7 @@
     <EntitySetMapping Name="PurchaseOrders">
       <EntityTypeMapping TypeName="DbFirstModel.PurchaseOrder">
         <MappingFragment StoreEntitySet="PurchaseOrder">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
           <ScalarProperty Name="PONumber" ColumnName="PONumber" />
           <ScalarProperty Name="Date" ColumnName="Date" />
@@ -978,15 +979,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spGetPOList1" FunctionName="DbFirstModel.Store.spGetPOList">
+    <FunctionImportMapping FunctionImportName="spGetPOList2" FunctionName="DbFirstModel.Store.spGetPOList">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="DbFirstModel.spGetPOList1_Result">
+        <ComplexTypeMapping TypeName="DbFirstModel.spGetPOList2_Result">
           <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
           <ScalarProperty Name="PONumber" ColumnName="PONumber" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
           <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
           <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

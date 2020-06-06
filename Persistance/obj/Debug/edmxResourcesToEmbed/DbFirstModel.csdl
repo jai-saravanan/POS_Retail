@@ -576,6 +576,7 @@
     <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="TaxType" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="PurchaseOrder_Join" Relationship="Self.FK_PurchaseOrder_Join_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrder_Join" />
+    <Property Name="IsDeleted" Type="Boolean" />
   </EntityType>
   <EntityType Name="PurchaseOrder_Join">
     <Key>
@@ -2080,6 +2081,11 @@
       <Parameter Name="FromDate" Mode="In" Type="DateTime" />
       <Parameter Name="ToDate" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="spGetPOList2" ReturnType="Collection(DbFirstModel.spGetPOList2_Result)">
+      <Parameter Name="SupplierName" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="spGetPOList_Result">
     <Property Type="Int32" Name="PO_ID" Nullable="false" />
@@ -2095,5 +2101,14 @@
     <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="OrderDetail" Nullable="true" />
     <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="spGetPOList2_Result">
+    <Property Type="Int32" Name="PO_ID" Nullable="false" />
+    <Property Type="String" Name="PONumber" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="OrderDetail" Nullable="true" />
+    <Property Type="Decimal" Name="GrandTotal" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
   </ComplexType>
 </Schema>

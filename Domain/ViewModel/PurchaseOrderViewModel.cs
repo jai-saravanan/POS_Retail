@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enum;
+using System;
 using System.Collections.Generic;
 namespace Domain.ViewModel
 {
@@ -32,6 +33,7 @@ namespace Domain.ViewModel
 
         public List<PurchaseOrderDetailViewModel> ProductDetail { get; set; }
 
+        public Status FormStatus { get; set; }
     }
 
     public class PurchaseOrderDetailViewModel

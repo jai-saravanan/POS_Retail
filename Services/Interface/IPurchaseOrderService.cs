@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Domain.Enum;
+using Domain.Model;
 using Domain.ViewModel;
 using System.Collections.Generic;
 
@@ -13,5 +14,9 @@ namespace Services.Interface
         List<PurchaseOrderDetailList> GetPOList(PurchaseOrderFilter purchaseOrderFilter);
 
         decimal GetTotalAmtForAllPO();
+
+        PurchaseOrderViewModel GetPurchaseOrderById(int purchaseOrderId);
+
+        void DeletePurchaseOrderById(int purchaseOrderId);
     }
 }

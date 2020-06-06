@@ -50,16 +50,28 @@
         dom: 'Bfrtip',
         buttons: [
             $.extend(true, {}, buttonCommon, {
-                extend: 'copyHtml5'
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3, 4, 5]
+                }
             }),
             $.extend(true, {}, buttonCommon, {
-                extend: 'excelHtml5'
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3, 4, 5]
+                }
             }),
             $.extend(true, {}, buttonCommon, {
-                extend: 'print'
+                extend: 'print',
+                exportOptions: {
+                    columns: [1, 2, 3, 4, 5]
+                }
             }),
             $.extend(true, {}, buttonCommon, {
-                extend: 'pdfHtml5'
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3, 4, 5]
+                }
             })
         ], "footerCallback": function (row, data, start, end, display) {
             var api = this.api(), data;

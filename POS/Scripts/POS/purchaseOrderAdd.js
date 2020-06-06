@@ -35,12 +35,12 @@
 
     jQuery('#txtQty').on('input', function () {
         var rate = $('#txtRate').val();
-        $('#txtProductAmt').val(rate * this.value);
+        $('#txtProductAmt').val((rate * this.value).toFixed(2));
     });
     jQuery('#txtRate').on('input', function () {
         debugger
         var qty = $('#txtQty').val();
-        $('#txtProductAmt').val(qty * this.value);
+        $('#txtProductAmt').val((qty * this.value).toFixed(2));
     });
 
     $('#btnAddProduct').click(function () {
@@ -84,15 +84,37 @@
     });
 
 
-    function fnClearProductInfo() {
-        $('#ProductId').val('');
-        $('#txtBarCode').val('');
-        $('#txtUnit').val('');
-        $('#txtRate').val('');
-        $('#txtProductAmt').val('');
-        $('#txtQty').val('');
-    }
+
+
+
 });
+function fnClearProductInfo() {
+    $('#ProductId').val('');
+    $('#txtBarCode').val('');
+    $('#txtUnit').val('');
+    $('#txtRate').val('');
+    $('#txtProductAmt').val('');
+    $('#txtQty').val('');
+}
+
+function fnFormReset() {
+    $("#TaxType").val('');
+    $("#selSupplierName").val('');
+    $("#Supplier_ID").val('');
+    $("#Address").val('');
+    $("#City").val('');
+    $("#Mobile").val('');
+    $("#Balance").text('0.00');
+    $("#Date").val('');
+    $("#Terms").val('');
+    $('#txtTaxPercentage').val('0');
+    $("#productList tbody tr").remove();
+    fnClearProductInfo();
+    calculateTotalAmt();
+    
+}
+
+
 function fnDeletePO(purchaseOrderId) {
     debugger
     $.ajax({
@@ -116,8 +138,8 @@ function calculateTotalAmt() {
         totalAmt = totalAmt + parseFloat(rows[i].cells[5].innerText);
     }
     $('#txtSubTotal').val(totalAmt);
-    $('#txtTaxValue').val(totalAmt * ($('#txtTaxPercentage').val() / 100));
-    $('#txtGrandTotal').val(parseFloat($('#txtSubTotal').val()) + parseFloat($('#txtTaxValue').val()));
+    $('#txtTaxValue').val((totalAmt * ($('#txtTaxPercentage').val() / 100)).toFixed(2));
+    $('#txtGrandTotal').val((parseFloat($('#txtSubTotal').val()) + parseFloat($('#txtTaxValue').val())).toFixed(2));
     $('#txtTotalAmt').val($('#txtGrandTotal').val());
 }
 

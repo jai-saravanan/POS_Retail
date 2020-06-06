@@ -270,7 +270,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p>Terms and conditions :</p>
-                                    <textarea cols="3" rows="4" name="Terms" class="form-control">@Model.Terms</textarea>
+                                    <textarea cols="3" rows="4" name="Terms" id="Terms" class="form-control">@Model.Terms</textarea>
                                 </div>
                             </div>
                         </div>
@@ -281,11 +281,13 @@
                                         if (Model.FormStatus == Domain.Enum.Status.Create)
                                         {
                                             <button type="submit" onclick="return fnFormSave()" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> Save</button>
+                                            <button type="button" onclick="fnFormReset()" class="btn btn-primary btn-lg"><i class="fa fa-refresh"></i> Reset</button>
                                         }
                                         else if (Model.FormStatus == Domain.Enum.Status.Update)
                                         {
                                             <button type="submit" onclick="return fnFormSave()" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> Save</button>
                                             <button type="button" onclick="fnDeletePO('@(Model.POId)')" class="btn btn-primary btn-lg"><i class="fa fa-remove"></i> Delete</button>
+                                            <button type="button" onclick="fnFormReset()" class="btn btn-primary btn-lg"><i class="fa fa-refresh"></i> Reset</button>
                                         }
                                         <button type="button" onclick="window.location.href='@Url.Action("PurchaseOrderList","PurchaseOrder")'" class="btn btn-primary btn-lg"><i class=""></i> Get All PO</button>
                                     }

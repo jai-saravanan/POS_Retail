@@ -66,11 +66,11 @@ namespace Repository.Implementation
                 .Select(x => new PurchaseOrderDetailList()
                 {
                     POId = x.PO_ID,
-                    Date = x.Date.ToString(),
+                    Date = x.Date.ToString().Trim(),
                     GrandTotal = x.GrandTotal,
-                    OrderDetail = x.OrderDetail,
-                    PONumber = x.PONumber,
-                    SupplierName = x.SupplierName,
+                    OrderDetail = x.OrderDetail.Trim(),
+                    PONumber = x.PONumber.Trim(),
+                    SupplierName = x.SupplierName.Trim(),
                     IsDeleted = x.IsDeleted ?? false
                 })?.Distinct()?.ToList();
 

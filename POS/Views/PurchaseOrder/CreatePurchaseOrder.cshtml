@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
       rel="stylesheet">
-<section class="header">
+<section class="header" style="margin-top: -30px;">
     <div class="header-inside">
         <h5>Purchase Order Entry</h5>
 
@@ -42,7 +42,7 @@
                             <tr>
                                 <td>PO Date:</td>
                                 <td>
-                                    <input type="text" id="Date" name="Date" value="@(Model.FormStatus == Domain.Enum.Status.Create ? "" : Model.Date.ToString("MM/dd/yyyy"))" class="input-style">
+                                    <input type="text" id="Date" style="width:279px" name="Date" value="@(Model.FormStatus == Domain.Enum.Status.Create ? "" : Model.Date.ToString("MM/dd/yyyy"))" class="input-style">
                                 </td>
                             </tr>
                             <tr>
@@ -99,7 +99,7 @@
                             </tr>
                             <tr>
                                 <td>Address:</td>
-                                <td colspan="3">
+                                <td colspan="4">
                                     <input type="text" id="Address" disabled
                                            class="form-control"
                                            value="" />
@@ -130,7 +130,7 @@
                 <section class="middle-part">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row inputfields">
+                            <div class="row inputfields" style="padding-left: 5px;">
                                 <div class="col-md-3">
                                     <h6>Product Name</h6>
                                     <select name="ProductId" id="ProductId" class="form-control js-example-basic-single">
@@ -145,32 +145,32 @@
                                     </select>
                                     <span id="errorProductId" class="text-danger hide">Choose product</span>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2" style="padding-right: 7px;padding-left: 0px;">
                                     <h6>Bar Code</h6>
                                     <input type="text" disabled class="form-control " id="txtBarCode" style="text-align:right;" />
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-1" style="        padding-right: 7px;
+        padding-left: 0px;">
                                     <h6>Unit</h6>
                                     <input type="text" disabled class="form-control" id="txtUnit" style="text-align:right;" />
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-1" style="padding-right: 7px;padding-left: 0px;">
                                     <h6>Quantity</h6>
                                     <input type="number" class="form-control" min="1" id="txtQty" style="text-align:right;" />
                                     <span id="errorQty" class="text-danger hide">Enter valid quantity</span>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-1" style="padding-right: 7px;padding-left: 0px;">
                                     <h6>Rate</h6>
                                     <input type="text" class="form-control" id="txtRate" style="text-align:right;" />
                                     <span id="errorRate" class="text-danger hide">Enter valid rate</span>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2" style="padding-right: 7px;padding-left: 0px;">
                                     <h6>Total Amount</h6>
                                     <input type="text" disabled class="form-control" id="txtProductAmt" style="text-align:right;" />
                                 </div>
 
-                                <div class="col-md-2">
-                                    <h6>&nbsp;</h6>
-                                    <button type="button" id="btnAddProduct"><i class="fa fa-plus"></i> Add</button>
+                                <div class="col-md-2" style="padding-left: 0px;">
+                                    <button type="button" id="btnAddProduct" style="width: 119px;margin-top: 20px;"><i class="fa fa-plus"></i> Add</button>
 
                                 </div>
                             </div>
@@ -222,7 +222,7 @@
                                                     <td>Sub Total:</td>
                                                     <td>
                                                         <input type="text" id="txtSubTotal" name="SubTotal"
-                                                               class="form-control"
+                                                               class="form-control" style="text-align:right;"
                                                                value="@Model.SubTotal" />
                                                     </td>
                                                 </tr>
@@ -230,7 +230,7 @@
                                                     <td>Sales Tax %:</td>
                                                     <td>
                                                         <input type="text" id="txtTaxPercentage" name="VATPer"
-                                                               class="form-control"
+                                                               class="form-control" style="text-align:right;"
                                                                value="@Model.VATPer" />
                                                     </td>
                                                 </tr>
@@ -238,7 +238,7 @@
                                                     <td>Sales Tax Value:</td>
                                                     <td>
                                                         <input type="text" id="txtTaxValue" name="VATAmount"
-                                                               class="form-control"
+                                                               class="form-control" style="text-align:right;"
                                                                value="@Model.VATAmount" />
                                                     </td>
                                                 </tr>
@@ -246,7 +246,7 @@
                                                     <td>Grand Total:</td>
                                                     <td>
                                                         <input type="text" id="txtGrandTotal"
-                                                               class="form-control"
+                                                               class="form-control" style="text-align:right;"
                                                                value="@Model.GrandTotal" />
                                                     </td>
                                                 </tr>
@@ -256,13 +256,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-7"></div>
-                                <div class="col-md-2 total">
+                                <div class="col-md-6"></div>
+                                <div class="col-md-3 total">
                                     <span>
                                         Total Amount :
                                     </span>
                                     &nbsp;
-                                    <input id="txtTotalAmt" name="GrandTotal" type="text" class="form-control" value="@Model.GrandTotal" />
+                                    <input id="txtTotalAmt" name="GrandTotal" type="text" style="text-align:right;" class="form-control" value="@Model.GrandTotal" />
                                 </div>
                                 <div class="col-md-3"></div>
                             </div>

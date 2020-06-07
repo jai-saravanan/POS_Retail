@@ -145,6 +145,7 @@ function calculateTotalAmt() {
 }
 
 function fnFormSave() {
+
     var rows = $("#productList tbody tr");
     for (var i = 0; i < rows.length; i++) {
         $('#tempProductDetail').append("<input type='text' name='ProductDetail[" + i + "].ProductID'  \

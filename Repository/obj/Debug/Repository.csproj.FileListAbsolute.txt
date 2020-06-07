@@ -12,6 +12,7 @@ D:\POS\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
 D:\POS\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\POS\Repository\obj\Debug\Repository.dll
 D:\POS\Repository\obj\Debug\Repository.pdb
+D:\Git\POS_Retail\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
 D:\Git\POS_Retail\Repository\bin\Debug\Repository.dll.config
 D:\Git\POS_Retail\Repository\bin\Debug\Repository.dll
 D:\Git\POS_Retail\Repository\bin\Debug\Repository.pdb
@@ -24,7 +25,6 @@ D:\Git\POS_Retail\Repository\bin\Debug\Persistance.pdb
 D:\Git\POS_Retail\Repository\bin\Debug\Persistance.dll.config
 D:\Git\POS_Retail\Repository\bin\Debug\EntityFramework.xml
 D:\Git\POS_Retail\Repository\bin\Debug\EntityFramework.SqlServer.xml
-D:\Git\POS_Retail\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
 D:\Git\POS_Retail\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\Git\POS_Retail\Repository\obj\Debug\Repository.dll
 D:\Git\POS_Retail\Repository\obj\Debug\Repository.pdb

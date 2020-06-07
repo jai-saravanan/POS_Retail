@@ -33,7 +33,7 @@ namespace Services.Implementation
             var purchaseOrder = new PurchaseOrder()
             {
                 PO_ID = purchaseOrderViewModel.POId,
-                Date = DateTime.Now,
+                Date = purchaseOrderViewModel.Date,
                 GrandTotal = purchaseOrderViewModel.GrandTotal,
                 PONumber = purchaseOrderViewModel.PONumber,
                 SubTotal = purchaseOrderViewModel.SubTotal,

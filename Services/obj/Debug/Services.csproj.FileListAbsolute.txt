@@ -27,6 +27,7 @@ D:\POS\Services\bin\Debug\System.Web.Razor.xml
 D:\POS\Services\bin\Debug\System.Web.WebPages.xml
 D:\POS\Services\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\POS\Services\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Git\POS_Retail\Services\obj\Debug\Services.csprojAssemblyReference.cache
 D:\Git\POS_Retail\Services\bin\Debug\Services.dll
 D:\Git\POS_Retail\Services\bin\Debug\Services.pdb
 D:\Git\POS_Retail\Services\bin\Debug\Domain.dll
@@ -52,7 +53,6 @@ D:\Git\POS_Retail\Services\bin\Debug\System.Web.WebPages.xml
 D:\Git\POS_Retail\Services\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Git\POS_Retail\Services\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Git\POS_Retail\Services\bin\Debug\EntityFramework.xml
-D:\Git\POS_Retail\Services\obj\Debug\Services.csprojAssemblyReference.cache
 D:\Git\POS_Retail\Services\obj\Debug\Services.csproj.CopyComplete
 D:\Git\POS_Retail\Services\obj\Debug\Services.dll
 D:\Git\POS_Retail\Services\obj\Debug\Services.pdb

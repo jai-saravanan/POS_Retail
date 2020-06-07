@@ -16,7 +16,6 @@ D:\Git\POS_Retail\Persistance\bin\Debug\EntityFramework.dll
 D:\Git\POS_Retail\Persistance\bin\Debug\EntityFramework.SqlServer.dll
 D:\Git\POS_Retail\Persistance\bin\Debug\EntityFramework.xml
 D:\Git\POS_Retail\Persistance\bin\Debug\EntityFramework.SqlServer.xml
-D:\Git\POS_Retail\Persistance\obj\Debug\Persistance.csprojAssemblyReference.cache
 D:\Git\POS_Retail\Persistance\obj\Debug\Persistance.csproj.CopyComplete
 D:\Git\POS_Retail\Persistance\obj\Debug\Persistance.dll
 D:\Git\POS_Retail\Persistance\obj\Debug\Persistance.pdb

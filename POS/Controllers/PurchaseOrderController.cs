@@ -54,7 +54,7 @@ namespace POS.Controllers
                 purchaseOrderViewModel.ProductDetail = data.ProductDetail;
                 purchaseOrderViewModel.SubTotal = data.SubTotal;
                 purchaseOrderViewModel.Supplier_ID = data.Supplier_ID.Trim();
-                purchaseOrderViewModel.TaxType = data.TaxType.Trim();
+                purchaseOrderViewModel.TaxType = data.TaxType?.Trim();
                 purchaseOrderViewModel.Terms = data.Terms?.Trim();
                 purchaseOrderViewModel.VATAmount = data.VATAmount;
                 purchaseOrderViewModel.VATPer = data.VATPer;

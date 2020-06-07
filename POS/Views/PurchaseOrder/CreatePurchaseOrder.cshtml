@@ -327,8 +327,13 @@
 <script>
     @if(Model.FormStatus != Domain.Enum.Status.Create)
     {
-        <text>
+        if (!string.IsNullOrEmpty(Model.TaxType))
+        {
+            <text>
     $("#TaxType option:contains('@Model.TaxType')").attr('selected', 'selected');
+    </text>
+        }
+        <text>
     $("#selSupplierName").val('@Model.Supplier_ID');
     $('#Balance').text('@Model.SupplierData.FirstOrDefault(x => x.SupplierID.Trim()== Model.Supplier_ID).OpeningBalance');
         $('#Address').val('@Model.SupplierData.FirstOrDefault(x => x.SupplierID.Trim()== Model.Supplier_ID).Address');

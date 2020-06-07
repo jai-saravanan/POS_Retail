@@ -91,6 +91,7 @@
 });
 function fnClearProductInfo() {
     $('#ProductId').val('');
+    $('#ProductId').select2().trigger('change');
     $('#txtBarCode').val('');
     $('#txtUnit').val('');
     $('#txtRate').val('');
@@ -100,7 +101,9 @@ function fnClearProductInfo() {
 
 function fnFormReset() {
     $("#TaxType").val('');
+    $('#TaxType').select2().trigger('change');
     $("#selSupplierName").val('');
+    $('#selSupplierName').select2().trigger('change');
     $("#Supplier_ID").val('');
     $("#Address").val('');
     $("#City").val('');
@@ -138,10 +141,10 @@ function calculateTotalAmt() {
     for (var i = 0; i < rows.length; i++) {
         totalAmt = totalAmt + parseFloat(rows[i].cells[5].innerText);
     }
-    $('#txtSubTotal').val(totalAmt);
+    $('#txtSubTotal').val(totalAmt.toFixed(2));
     $('#txtTaxValue').val((totalAmt * ($('#txtTaxPercentage').val() / 100)).toFixed(2));
     $('#txtGrandTotal').val((parseFloat($('#txtSubTotal').val()) + parseFloat($('#txtTaxValue').val())).toFixed(2));
-    $('#txtTotalAmt').val($('#txtGrandTotal').val());
+    $('#txtTotalAmt').val(totalAmt.toFixed(2));
 }
 
 function fnFormSave() {

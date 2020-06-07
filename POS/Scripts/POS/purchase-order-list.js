@@ -13,6 +13,8 @@
         }
     };
 
+
+
     var table = $('#tblPOlist').DataTable({
         ajax: 'GetPOList?supplierId=' + $('#txtSupplierId').val() + '&fromDate=' + $('#txtFromDate').val() + '&toDate=' + $('#txtToDate').val(),
         columns: [
@@ -92,6 +94,11 @@
         }
     });
 
+    $("#txtSupplierId").change(function () {
+        // clear exisiting values // TODO
+        table.ajax.url('GetPOList?supplierId=' + $('#txtSupplierId').val() + '&fromDate=' + $('#txtFromDate').val() + '&toDate=' + $('#txtToDate').val()).load();
+    });
+
     $("#btnGetData").on("click", function (event) {
         debugger
         table.ajax.url('GetPOList?supplierId=' + $('#txtSupplierId').val() + '&fromDate=' + $('#txtFromDate').val() + '&toDate=' + $('#txtToDate').val()).load();
@@ -100,8 +107,10 @@
     $("#btnReset").on("click", function (event) {
         debugger
         $('#txtSupplierId').val('');
+        $('#txtSupplierId').select2().trigger('change');
         $('#txtFromDate').val('');
         $('#txtToDate').val('');
+        table.ajax.url('GetPOList?supplierId=' + $('#txtSupplierId').val() + '&fromDate=' + $('#txtFromDate').val() + '&toDate=' + $('#txtToDate').val()).load();
     });
 });
 
